@@ -33,6 +33,26 @@ namespace SegonExerciciAvaluacioContinuada
         private static void Init()
         {
             // PENDENT IMPLEMENTAR
+
+            Console.Write("Escriu 1 si vols jugar amb Mario o 2 si vols jugar amb Yoshi");
+
+            try
+            {
+                int n = Convert.ToInt32(Console.ReadLine());
+                if (n == 1)
+                {
+                    player mario = new player(mario);
+                }
+                if (n == 2)
+                {
+                    player yoshi = new player(yoshi);
+                }
+            }
+            catch (Exception)
+            {
+                Console.Write("valor no vàlid");
+            }
+
         }
         private static void Mostrar()
         {

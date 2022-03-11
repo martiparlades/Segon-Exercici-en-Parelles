@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Threading;
 
-public class Yoshi : Mario
+public class Yoshi : MarioBross
 {
 	private bool Tongue;
 
-	public Yoshi(int col)
+	public Yoshi(int col) : base(col)
 	{
-        base.MarioBross();
+        pos_row = 2;
 	}
 	public override void Moure(ConsoleKeyInfo cki)
     {

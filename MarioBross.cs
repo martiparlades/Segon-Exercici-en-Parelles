@@ -9,13 +9,14 @@ public class MarioBross : Personatge
 
 	public MarioBross(int col)
 	{
+		base.setPosicio(col)
 		this.Pos_row = 2;
 		Vida = MAX_VIDA;
 	}
 
 	public int GetVida()
     {
-		return Vida;
+		return this.Vida;
     }
 
 	public void Moure(ConsoleKeyInfo cki)
@@ -23,9 +24,9 @@ public class MarioBross : Personatge
 
     }
 
-	public void Mostrar()
+	public override void Mostrar()
     {
-
+		
     }
 
 	public virtual bool Update()
@@ -43,15 +44,13 @@ public class MarioBross : Personatge
 
 	public virtual void CheckPosition(List<Personatge> Enemics)
 	{
-		foreach (Personatge character in Enemics)
+
+		for (int i = 0; i < Enemics.Count; i++)
         {
-			if(character.GetPosicio() -1 == this.Pos_row)
+			if(Enemics[i].getPosicio() == this.Pos_row - 1)
             {
-				Enemics.Remove(character);
-            }
-			if (character.GetPosicio() == this.Pos_row)
-            {
-				this.Vida--;
+				Enemics.RemoveAt(i);
+				i--;
             }
         }
 	}

@@ -29,7 +29,16 @@ public class Personatge
 
 	public virtual void Mostrar()
 	{
-		Console.SetCursorPosition(1, Pos_col);
+        try
+        {
+			Console.SetCursorPosition(Pos_col,row);
+			Console.Write("e");
+		}
+        catch (Exception)
+        {
+			Console.Write("error");
+        }
+		
 
 	}
 
