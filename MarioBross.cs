@@ -5,11 +5,11 @@ public class MarioBross : Personatge
 
 	private const int MAX_VIDA = 3;
 	private int Vida;
-	protected int Pos_row;
+	public int Pos_row;
 
 	public MarioBross(int col)
 	{
-		base.setPosicio(col)
+		base.SetPosicio(col);
 		this.Pos_row = 2;
 		Vida = MAX_VIDA;
 	}

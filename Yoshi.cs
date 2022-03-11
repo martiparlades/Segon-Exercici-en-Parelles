@@ -8,11 +8,11 @@ public class Yoshi : MarioBross
 
 	public Yoshi(int col) : base(col)
 	{
-        pos_row = 2;
+        int pos_row = 2;
 	}
 	public override void Moure(ConsoleKeyInfo cki)
     {
-        if (cki.KeyValue == "Spacebar")
+        if (cki.Key == ConsoleKey.Spacebar)
         {
             Tongue = true;
         }
@@ -29,6 +29,7 @@ public class Yoshi : MarioBross
     {
         Tongue=false;
         base.Update();
+        return Tongue;
     }
 	public override void CheckPosition(List<Personatge> Enemics)
     {
@@ -36,7 +37,7 @@ public class Yoshi : MarioBross
 
         foreach (Personatge character in Enemics)
         {
-            if ((character.GetPosicio() == base.pos_col || character.GetPosicio()-1 == base.pos_col) && Tongue)
+            if ((character.GetPosicio() == base.Pos_row || character.GetPosicio()-1 == base.Pos_row) && Tongue)
             {
                 Enemics.Remove(character);
             }

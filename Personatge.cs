@@ -31,7 +31,7 @@ public class Personatge
 	{
         try
         {
-			Console.SetCursorPosition(Pos_col,row);
+			Console.SetCursorPosition(Pos_col,2);
 			Console.Write("e");
 		}
         catch (Exception)
